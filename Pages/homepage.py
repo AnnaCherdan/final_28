@@ -11,5 +11,5 @@ from usefull_methods import check_exists_by_xpath
 
 class HomePage:
     def __init__(self, driver):
-        
+
 
