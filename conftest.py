@@ -20,11 +20,11 @@ def get_webdriver(get_chrome_options):
     return driver
 
 
-@pytest.fixture
-def welcome(request, get_webdriver):
-    driver = get_webdriver
-    # driver = webdriver.Chrome()
-    # driver.set_window_size(1400, 700)
+@pytest.fixture(scope='class')
+def welcome(request):
+    # driver = get_webdriver
+    driver = webdriver.Chrome()
+    driver.set_window_size(1400, 700)
     url = 'https://www.labirint.ru/'
     if request.cls is not None:
         request.cls.driver = driver
