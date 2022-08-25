@@ -7,6 +7,7 @@ from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.keys import Keys
 from Pages.base import WebPage
 from Pages.elements import WebElement
+from Pages.elements import ManyWebElements
 
 from selenium.webdriver.common.by import By
 from Locators.locators import Locators
@@ -19,6 +20,10 @@ class HomePage (object):
         self.url = url
         self.driver.implicitly_wait(timeout)
         self.header_button_logo_lab = Locators.header_button_logo_lab
+        self.header_button_books = Locators.header_button_books
+        self.button_books_bilinguals = Locators.button_books_bilinguals
+        self.only_bilinguals = Locators.only_bilinguals
+
 
 
     def get_relative_link(self):

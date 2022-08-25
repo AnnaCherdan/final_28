@@ -20,7 +20,7 @@ def get_webdriver(get_chrome_options):
     return driver
 
 
-@pytest.fixture(scope='class')
+@pytest.fixture
 def welcome(request):
     # driver = get_webdriver
     driver = webdriver.Chrome()
@@ -29,5 +29,7 @@ def welcome(request):
     if request.cls is not None:
         request.cls.driver = driver
     driver.get(url)
-    yield driver
+    return driver
+
     driver.quit()
+
