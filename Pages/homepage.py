@@ -30,6 +30,8 @@ class HomePage (object):
         self.children_leisure = Locators.children_leisure
         self.manga_comics_art = Locators.manga_comics_art
         self.all_manga_comics_art = Locators.all_manga_comics_art
+        self.only_manga_button = Locators.only_manga_button
+        self.youth_literature = Locators.youth_literature
 
     def click_logo(self):
         WebDriverWait(self.driver, 10).until(
@@ -41,7 +43,7 @@ class HomePage (object):
             EC.presence_of_element_located((By.CLASS_NAME, self.header_discount_logo)))
         self.driver.find_element(By.CLASS_NAME, 'b-header-b-logo-e-discount').click()
         WebDriverWait(self.driver, 5).until(EC.presence_of_element_located(
-            (By.CLASS_NAME, 'block-link-title')))
+                     (By.CLASS_NAME, 'block-link-title')))
 
     def click_best(self):
         WebDriverWait(self.driver, 5).until(EC.presence_of_element_located(
@@ -112,6 +114,46 @@ class HomePage (object):
             self.driver.find_element(By.XPATH, "//*[@id='header-genres']/div[1]/ul[1]/li[5]/ul[1]/li[5]/a[1]"))
         actions.click()
         actions.perform()
+
+    def click_all_manga_comics_art(self):
+        WebDriverWait(self.driver, 5).until(EC.presence_of_element_located(
+                     (By.CLASS_NAME, 'b-header-b-menu-e-text')))
+        actions = ActionChains(self.driver)
+        actions.move_to_element(self.driver.find_element(By.CLASS_NAME, 'b-header-b-menu-e-text'))
+        actions.perform()
+        WebDriverWait(self.driver, 5).until(EC.presence_of_element_located(
+                     (By.XPATH, "//span[contains(text(), 'Комиксы, Манга, Артбуки')]")))
+        actions.move_to_element(
+            self.driver.find_element(By.XPATH, "//span[contains(text(), 'Комиксы, Манга, Артбуки')]"))
+        actions.perform()
+        actions.move_to_element(
+            self.driver.find_element(By.XPATH, '//*[@id="header-genres"]/div[1]/ul[1]/li[6]/ul[1]/li[3]/a[1]'))
+        actions.click()
+        actions.perform()
+
+    def click_only_manga_button(self):
+        WebDriverWait(self.driver, 5).until(EC.presence_of_element_located(
+                     (By.CLASS_NAME, 'b-header-b-menu-e-text')))
+        actions = ActionChains(self.driver)
+        actions.move_to_element(self.driver.find_element(By.CLASS_NAME, 'b-header-b-menu-e-text'))
+        actions.perform()
+        WebDriverWait(self.driver, 5).until(EC.presence_of_element_located(
+                     (By.XPATH, "//span[contains(text(), 'Комиксы, Манга, Артбуки')]")))
+        actions.move_to_element(
+            self.driver.find_element(By.XPATH, "//span[contains(text(), 'Комиксы, Манга, Артбуки')]"))
+        actions.perform()
+        actions.move_to_element(
+            self.driver.find_element(By.XPATH, '//*[@id="header-genres"]/div[1]/ul[1]/li[6]/ul[1]/li[7]/a[1]'))
+        actions.click()
+        actions.perform()
+
+    def click_youth_literature(self):
+        WebDriverWait(self.driver, 5).until(EC.presence_of_element_located(
+                     (By.CLASS_NAME, 'b-header-b-menu-e-text')))
+        actions = ActionChains(self.driver)
+        actions.move_to_element(self.driver.find_element(By.CLASS_NAME, 'b-header-b-menu-e-text'))
+        actions.perform()
+        self.driver.find_element(By.XPATH, "//*[@id='header-genres']/div[1]/ul[1]/li[7]/a[1]").click()
 
 
 
