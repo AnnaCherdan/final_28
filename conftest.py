@@ -29,7 +29,7 @@ def welcome(request):
     if request.cls is not None:
         request.cls.driver = driver
     driver.get(url)
-    return driver
+    yield driver
 
     driver.quit()
 
