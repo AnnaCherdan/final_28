@@ -32,6 +32,12 @@ class HomePage (object):
         self.all_manga_comics_art = Locators.all_manga_comics_art
         self.only_manga_button = Locators.only_manga_button
         self.youth_literature = Locators.youth_literature
+        self.non_fiction_literature = Locators.non_fiction_literature
+        self.non_fiction_all = Locators.non_fiction_all
+        self.non_fiction_natural_sciences = Locators.non_fiction_natural_sciences
+        self.periodicals = Locators.periodicals
+        self.religion = Locators.religion
+        self.all_religion = Locators.all_religion
 
     def click_logo(self):
         WebDriverWait(self.driver, 10).until(
@@ -43,11 +49,11 @@ class HomePage (object):
             EC.presence_of_element_located((By.CLASS_NAME, self.header_discount_logo)))
         self.driver.find_element(By.CLASS_NAME, 'b-header-b-logo-e-discount').click()
         WebDriverWait(self.driver, 5).until(EC.presence_of_element_located(
-                     (By.CLASS_NAME, 'block-link-title')))
+            (By.CLASS_NAME, 'block-link-title')))
 
     def click_best(self):
         WebDriverWait(self.driver, 5).until(EC.presence_of_element_located(
-                     (By.CLASS_NAME, 'b-header-b-menu-e-text')))
+            (By.CLASS_NAME, 'b-header-b-menu-e-text')))
         actions = ActionChains(self.driver)
         actions.move_to_element(self.driver.find_element(By.CLASS_NAME, 'b-header-b-menu-e-text'))
         actions.perform()
@@ -58,7 +64,7 @@ class HomePage (object):
 
     def click_all_books(self):
         WebDriverWait(self.driver, 5).until(EC.presence_of_element_located(
-                      (By.CLASS_NAME, 'b-header-b-menu-e-text')))
+            (By.CLASS_NAME, 'b-header-b-menu-e-text')))
         actions = ActionChains(self.driver)
         actions.move_to_element(self.driver.find_element(By.CLASS_NAME, 'b-header-b-menu-e-text'))
         actions.perform()
@@ -69,12 +75,12 @@ class HomePage (object):
 
     def click_bilinguals(self):
         WebDriverWait(self.driver, 5).until(EC.presence_of_element_located(
-                     (By.CLASS_NAME, 'b-header-b-menu-e-text')))
+            (By.CLASS_NAME, 'b-header-b-menu-e-text')))
         actions = ActionChains(self.driver)
         actions.move_to_element(self.driver.find_element(By.CLASS_NAME, 'b-header-b-menu-e-text'))
         actions.perform()
         WebDriverWait(self.driver, 5).until(EC.presence_of_element_located(
-                     (By.XPATH, "//span[contains(text(), 'Билингвы и книги на иностранных языках')]")))
+            (By.XPATH, "//span[contains(text(), 'Билингвы и книги на иностранных языках')]")))
         actions.move_to_element(
             self.driver.find_element(By.XPATH, "//span[contains(text(), 'Билингвы и книги на иностранных языках')]"))
         actions.perform()
@@ -85,12 +91,12 @@ class HomePage (object):
 
     def click_children_all_books(self):
         WebDriverWait(self.driver, 5).until(EC.presence_of_element_located(
-                     (By.CLASS_NAME, 'b-header-b-menu-e-text')))
+            (By.CLASS_NAME, 'b-header-b-menu-e-text')))
         actions = ActionChains(self.driver)
         actions.move_to_element(self.driver.find_element(By.CLASS_NAME, 'b-header-b-menu-e-text'))
         actions.perform()
         WebDriverWait(self.driver, 5).until(EC.presence_of_element_located(
-                     (By.XPATH, "//span[contains(text(), 'Книги для детей')]")))
+            (By.XPATH, "//span[contains(text(), 'Книги для детей')]")))
         actions.move_to_element(
             self.driver.find_element(By.XPATH, "//span[contains(text(), 'Книги для детей')]"))
         actions.perform()
@@ -101,12 +107,12 @@ class HomePage (object):
 
     def click_children_leisure(self):
         WebDriverWait(self.driver, 5).until(EC.presence_of_element_located(
-                     (By.CLASS_NAME, 'b-header-b-menu-e-text')))
+            (By.CLASS_NAME, 'b-header-b-menu-e-text')))
         actions = ActionChains(self.driver)
         actions.move_to_element(self.driver.find_element(By.CLASS_NAME, 'b-header-b-menu-e-text'))
         actions.perform()
         WebDriverWait(self.driver, 5).until(EC.presence_of_element_located(
-                     (By.XPATH, "//span[contains(text(), 'Книги для детей')]")))
+            (By.XPATH, "//span[contains(text(), 'Книги для детей')]")))
         actions.move_to_element(
             self.driver.find_element(By.XPATH, "//span[contains(text(), 'Книги для детей')]"))
         actions.perform()
@@ -117,12 +123,12 @@ class HomePage (object):
 
     def click_all_manga_comics_art(self):
         WebDriverWait(self.driver, 5).until(EC.presence_of_element_located(
-                     (By.CLASS_NAME, 'b-header-b-menu-e-text')))
+            (By.CLASS_NAME, 'b-header-b-menu-e-text')))
         actions = ActionChains(self.driver)
         actions.move_to_element(self.driver.find_element(By.CLASS_NAME, 'b-header-b-menu-e-text'))
         actions.perform()
         WebDriverWait(self.driver, 5).until(EC.presence_of_element_located(
-                     (By.XPATH, "//span[contains(text(), 'Комиксы, Манга, Артбуки')]")))
+            (By.XPATH, "//span[contains(text(), 'Комиксы, Манга, Артбуки')]")))
         actions.move_to_element(
             self.driver.find_element(By.XPATH, "//span[contains(text(), 'Комиксы, Манга, Артбуки')]"))
         actions.perform()
@@ -133,12 +139,12 @@ class HomePage (object):
 
     def click_only_manga_button(self):
         WebDriverWait(self.driver, 5).until(EC.presence_of_element_located(
-                     (By.CLASS_NAME, 'b-header-b-menu-e-text')))
+            (By.CLASS_NAME, 'b-header-b-menu-e-text')))
         actions = ActionChains(self.driver)
         actions.move_to_element(self.driver.find_element(By.CLASS_NAME, 'b-header-b-menu-e-text'))
         actions.perform()
         WebDriverWait(self.driver, 5).until(EC.presence_of_element_located(
-                     (By.XPATH, "//span[contains(text(), 'Комиксы, Манга, Артбуки')]")))
+            (By.XPATH, "//span[contains(text(), 'Комиксы, Манга, Артбуки')]")))
         actions.move_to_element(
             self.driver.find_element(By.XPATH, "//span[contains(text(), 'Комиксы, Манга, Артбуки')]"))
         actions.perform()
@@ -149,11 +155,70 @@ class HomePage (object):
 
     def click_youth_literature(self):
         WebDriverWait(self.driver, 5).until(EC.presence_of_element_located(
-                     (By.CLASS_NAME, 'b-header-b-menu-e-text')))
+            (By.CLASS_NAME, 'b-header-b-menu-e-text')))
         actions = ActionChains(self.driver)
         actions.move_to_element(self.driver.find_element(By.CLASS_NAME, 'b-header-b-menu-e-text'))
         actions.perform()
         self.driver.find_element(By.XPATH, "//*[@id='header-genres']/div[1]/ul[1]/li[7]/a[1]").click()
+
+    def click_non_fiction_all(self):
+        WebDriverWait(self.driver, 5).until(EC.presence_of_element_located(
+            (By.CLASS_NAME, 'b-header-b-menu-e-text')))
+        actions = ActionChains(self.driver)
+        actions.move_to_element(self.driver.find_element(By.CLASS_NAME, 'b-header-b-menu-e-text'))
+        actions.perform()
+        WebDriverWait(self.driver, 5).until(EC.presence_of_element_located(
+            (By.XPATH, "//span[contains(text(), 'Нехудожественная литература')]")))
+        actions.move_to_element(
+            self.driver.find_element(By.XPATH, "//span[contains(text(), 'Нехудожественная литература')]"))
+        actions.perform()
+        actions.move_to_element(
+            self.driver.find_element(By.XPATH, '//*[@id="header-genres"]/div[1]/ul[1]/li[8]/ul[1]/li[3]/a[1]'))
+        actions.click()
+        actions.perform()
+
+    def click_non_fiction_natural_sciences(self):
+        WebDriverWait(self.driver, 5).until(EC.presence_of_element_located(
+            (By.CLASS_NAME, 'b-header-b-menu-e-text')))
+        actions = ActionChains(self.driver)
+        actions.move_to_element(self.driver.find_element(By.CLASS_NAME, 'b-header-b-menu-e-text'))
+        actions.perform()
+        WebDriverWait(self.driver, 5).until(EC.presence_of_element_located(
+            (By.XPATH, "//span[contains(text(), 'Нехудожественная литература')]")))
+        actions.move_to_element(
+            self.driver.find_element(By.XPATH, "//span[contains(text(), 'Нехудожественная литература')]"))
+        actions.perform()
+        actions.move_to_element(
+            self.driver.find_element(By.XPATH, '//*[@id="header-genres"]/div[1]/ul[1]/li[8]/ul[1]/li[8]/a[1]'))
+        actions.click()
+        actions.perform()
+
+    def click_periodicals(self):
+        WebDriverWait(self.driver, 5).until(EC.presence_of_element_located(
+            (By.CLASS_NAME, 'b-header-b-menu-e-text')))
+        actions = ActionChains(self.driver)
+        actions.move_to_element(self.driver.find_element(By.CLASS_NAME, 'b-header-b-menu-e-text'))
+        actions.perform()
+        self.driver.find_element(By.XPATH, '//*[@id="header-genres"]/div[1]/ul[1]/li[9]/a[1]').click()
+
+    def click_all_religion(self):
+        WebDriverWait(self.driver, 5).until(EC.presence_of_element_located(
+            (By.CLASS_NAME, 'b-header-b-menu-e-text')))
+        actions = ActionChains(self.driver)
+        actions.move_to_element(self.driver.find_element(By.CLASS_NAME, 'b-header-b-menu-e-text'))
+        actions.perform()
+        WebDriverWait(self.driver, 5).until(EC.presence_of_element_located(
+            (By.XPATH, "//span[contains(text(), 'Религия')]")))
+        actions.move_to_element(
+            self.driver.find_element(By.XPATH, "//span[contains(text(), 'Религия')]"))
+        actions.perform()
+        actions.move_to_element(
+            self.driver.find_element(By.XPATH, '//*[@id="header-genres"]/div[1]/ul[1]/li[10]/ul[1]/li[3]/a[1]'))
+        actions.click()
+        actions.perform()
+
+
+
 
 
 

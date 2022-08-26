@@ -94,13 +94,34 @@ class TestHomePage:
         homepage.click_youth_literature()
         assert driver.current_url == 'https://www.labirint.ru/genres/3066/'
 
+    def test_non_fiction_all(self):
+        driver = webdriver.Chrome(executable_path='C:\\Users\\User\\Desktop\\Python\\final_28\\chromedriver')
+        driver.set_window_size(1400, 700)
+        driver.get('https://www.labirint.ru')
+        homepage = HomePage(driver)
+        homepage.click_non_fiction_all()
+        assert driver.current_url == 'https://www.labirint.ru/genres/3000/'
 
+    def test_non_fiction_natural_sciences(self):
+        driver = webdriver.Chrome(executable_path='C:\\Users\\User\\Desktop\\Python\\final_28\\chromedriver')
+        driver.set_window_size(1400, 700)
+        driver.get('https://www.labirint.ru')
+        homepage = HomePage(driver)
+        homepage.click_non_fiction_natural_sciences()
+        assert driver.current_url == 'https://www.labirint.ru/genres/1854/'
 
+    def test_periodicals(self):
+        driver = webdriver.Chrome(executable_path='C:\\Users\\User\\Desktop\\Python\\final_28\\chromedriver')
+        driver.set_window_size(1400, 700)
+        driver.get('https://www.labirint.ru')
+        homepage = HomePage(driver)
+        homepage.click_periodicals()
+        assert driver.current_url == 'https://www.labirint.ru/genres/2137/'
 
-
-
-
-
-
-
-
+    def test_all_religion(self):
+        driver = webdriver.Chrome(executable_path='C:\\Users\\User\\Desktop\\Python\\final_28\\chromedriver')
+        driver.set_window_size(1400, 700)
+        driver.get('https://www.labirint.ru')
+        homepage = HomePage(driver)
+        homepage.click_all_religion()
+        assert driver.current_url == 'https://www.labirint.ru/genres/2386/'

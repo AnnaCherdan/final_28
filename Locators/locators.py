@@ -23,4 +23,13 @@ class Locators:
     all_manga_comics_art = '//*[@id="header-genres"]/div[1]/ul[1]/li[6]/ul[1]/li[3]/a[1]'
     only_manga_button = '//*[@id="header-genres"]/div[1]/ul[1]/li[6]/ul[1]/li[7]/a[1]'
     youth_literature = "//*[@id='header-genres']/div[1]/ul[1]/li[7]/a[1]"
+    non_fiction_literature = "//span[contains(text(), 'Нехудожественная литература')]"
+    non_fiction_all = '//*[@id="header-genres"]/div[1]/ul[1]/li[8]/ul[1]/li[3]/a[1]'
+    non_fiction_natural_sciences = '//*[@id="header-genres"]/div[1]/ul[1]/li[8]/ul[1]/li[8]/a[1]'
+    periodicals = '//*[@id="header-genres"]/div[1]/ul[1]/li[9]/a[1]'
+    religion = "//span[contains(text(), 'Религия')]"
+    all_religion = '//*[@id="header-genres"]/div[1]/ul[1]/li[10]/ul[1]/li[3]/a[1]'
+
+
+
 
