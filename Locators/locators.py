@@ -29,6 +29,13 @@ class Locators:
     periodicals = '//*[@id="header-genres"]/div[1]/ul[1]/li[9]/a[1]'
     religion = "//span[contains(text(), 'Религия')]"
     all_religion = '//*[@id="header-genres"]/div[1]/ul[1]/li[10]/ul[1]/li[3]/a[1]'
+    religious_studies = '//*[@id="header-genres"]/div[1]/ul[1]/li[10]/ul[1]/li[6]/a[1]'
+    educational_methodical_literature = "//span[contains(text(), 'Учебная, методическая литература и словари')]"
+    all_educational_methodical_literature = '//*[@id="header-genres"]/div[1]/ul[1]/li[11]/ul[1]/li[3]/a[1]'
+    pedagogy_educational_methodical_literature = '//*[@id="header-genres"]/div[1]/ul[1]/li[11]/ul[1]/li[10]/a[1]'
+    fiction_literature = "//span[contains(text(), 'Художественная литература')]"
+    all_fiction_literature = '//*[@id="header-genres"]/div[1]/ul[1]/li[12]/ul[1]/li[3]/a[1]'
+    fantasy_fiction_literature = '//*[@id="header-genres"]/div[1]/ul[1]/li[12]/ul[1]/li[16]/a[1]'
 
 
 
