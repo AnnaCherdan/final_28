@@ -22,14 +22,6 @@ class TestHomePage:
         homepage.click_logo()
         assert driver.current_url == 'https://www.labirint.ru/'
 
-    # def test_clickable_discount(self):
-    #     driver = webdriver.Chrome()
-    #     driver.set_window_size(1400, 700)
-    #     driver.get('https://www.labirint.ru/')
-    #     homepage = HomePage(driver)
-    #     homepage.click_discount()
-    #     assert driver.find_element(By.CLASS_NAME, 'block-link-title')
-
     def test_books_best(self):
         driver = webdriver.Chrome()
         driver.set_window_size(1400, 700)
@@ -96,10 +88,10 @@ class TestHomePage:
 
     def test_non_fiction_all(self):
         driver = webdriver.Chrome()
-        driver.set_window_size(1400, 700)
+        driver.set_window_size(1900, 1200)
         driver.get('https://www.labirint.ru')
         homepage = HomePage(driver)
-        homepage.click_non_fiction_all()
+        homepage.click_non_fiction_literature_all()
         assert driver.current_url == 'https://www.labirint.ru/genres/3000/'
 
     def test_non_fiction_natural_sciences(self):
@@ -144,7 +136,7 @@ class TestHomePage:
 
     def test_pedagogy_educational_methodical_literature(self):
         driver = webdriver.Chrome()
-        driver.set_window_size(1400, 700)
+        driver.set_window_size(1900, 1200)
         driver.get('https://www.labirint.ru')
         homepage = HomePage(driver)
         homepage.click_pedagogy_educational_methodical_literature()
@@ -160,8 +152,82 @@ class TestHomePage:
 
     def test_fantasy_fiction_literature(self):
         driver = webdriver.Chrome()
-        driver.set_window_size(1400, 700)
+        driver.set_window_size(1900, 1200)
         driver.get('https://www.labirint.ru')
         homepage = HomePage(driver)
         homepage.click_fantasy_fiction_literature()
         assert driver.current_url == 'https://www.labirint.ru/genres/2792/'
+
+    def test_small_book_reviews(self):
+        driver = webdriver.Chrome()
+        driver.set_window_size(1900, 1200)
+        driver.get('https://www.labirint.ru')
+        homepage = HomePage(driver)
+        homepage.click_small_book_reviews()
+        assert driver.current_url == 'https://www.labirint.ru/news/books/'
+
+    def test_author_books(self):
+        driver = webdriver.Chrome()
+        driver.set_window_size(1900, 1200)
+        driver.get('https://www.labirint.ru')
+        homepage = HomePage(driver)
+        homepage.click_author_books()
+        assert driver.current_url == 'https://www.labirint.ru/authors/books/'
+
+    def test_school_russian(self):
+        driver = webdriver.Chrome()
+        driver.set_window_size(1900, 1200)
+        driver.get('https://www.labirint.ru')
+        homepage = HomePage(driver)
+        homepage.click_school_russian()
+        assert driver.find_element(
+            By.XPATH, '//*[@id="right-inner"]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/h3[1]').is_displayed()
+
+    def test_school_six_class(self):
+        driver = webdriver.Chrome()
+        driver.set_window_size(1900, 1200)
+        driver.get('https://www.labirint.ru')
+        homepage = HomePage(driver)
+        homepage.click_school_six_class()
+        assert driver.find_element(
+            By.XPATH, '//*[@id="right-inner"]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/h3[1]').is_displayed()
+
+    def test_school_unified_state_exam(self):
+        driver = webdriver.Chrome()
+        driver.set_window_size(1900, 1200)
+        driver.get('https://www.labirint.ru')
+        homepage = HomePage(driver)
+        homepage.click_school_unified_state_exam()
+        assert driver.current_url == 'https://www.labirint.ru/school/?examtype[]=1#right'
+
+    def test_all_games(self):
+        driver = webdriver.Chrome()
+        driver.set_window_size(1900, 1200)
+        driver.get('https://www.labirint.ru')
+        homepage = HomePage(driver)
+        homepage.click_all_games()
+        assert driver.current_url == 'https://www.labirint.ru/games/'
+
+    def test_all_games_and_toys(self):
+        driver = webdriver.Chrome()
+        driver.set_window_size(1900, 1200)
+        driver.get('https://www.labirint.ru')
+        homepage = HomePage(driver)
+        homepage.click_all_games_and_toys()
+        assert driver.current_url == 'https://www.labirint.ru/genres/1643/'
+
+    def test_small_toy_manufacturers(self):
+        driver = webdriver.Chrome()
+        driver.set_window_size(1900, 1200)
+        driver.get('https://www.labirint.ru')
+        homepage = HomePage(driver)
+        homepage.click_small_toy_manufacturers()
+        assert driver.current_url == 'https://www.labirint.ru/pubhouse/games/'
+
+    def test_all_book_accessories(self):
+        driver = webdriver.Chrome()
+        driver.set_window_size(1900, 1200)
+        driver.get('https://www.labirint.ru')
+        homepage = HomePage(driver)
+        homepage.click_all_book_accessories()
+        assert driver.current_url == 'https://www.labirint.ru/genres/2302/'
