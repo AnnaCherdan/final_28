@@ -134,14 +134,6 @@ class TestHomePage:
         homepage.click_all_educational_methodical_literature()
         assert driver.current_url == 'https://www.labirint.ru/genres/11/'
 
-    def test_pedagogy_educational_methodical_literature(self):
-        driver = webdriver.Chrome()
-        driver.set_window_size(1900, 1200)
-        driver.get('https://www.labirint.ru')
-        homepage = HomePage(driver)
-        homepage.click_pedagogy_educational_methodical_literature()
-        assert driver.current_url == 'https://www.labirint.ru/genres/1857/'
-
     def test_all_fiction_literature(self):
         driver = webdriver.Chrome()
         driver.set_window_size(1400, 700)
@@ -149,14 +141,6 @@ class TestHomePage:
         homepage = HomePage(driver)
         homepage.click_all_fiction_literature()
         assert driver.current_url == 'https://www.labirint.ru/genres/1852/'
-
-    def test_fantasy_fiction_literature(self):
-        driver = webdriver.Chrome()
-        driver.set_window_size(1900, 1200)
-        driver.get('https://www.labirint.ru')
-        homepage = HomePage(driver)
-        homepage.click_fantasy_fiction_literature()
-        assert driver.current_url == 'https://www.labirint.ru/genres/2792/'
 
     def test_small_book_reviews(self):
         driver = webdriver.Chrome()
@@ -231,3 +215,43 @@ class TestHomePage:
         homepage = HomePage(driver)
         homepage.click_all_book_accessories()
         assert driver.current_url == 'https://www.labirint.ru/genres/2302/'
+
+    def test_body_readers_choose_today(self):
+        driver = webdriver.Chrome()
+        driver.set_window_size(1900, 1200)
+        driver.get('https://www.labirint.ru')
+        homepage = HomePage(driver)
+        homepage.click_body_readers_choose_today()
+        assert driver.current_url == 'https://www.labirint.ru/best/'
+
+    def test_footer_zen_yandex(self):
+        driver = webdriver.Chrome()
+        driver.set_window_size(1900, 1200)
+        driver.get('https://www.labirint.ru')
+        homepage = HomePage(driver)
+        homepage.click_footer_zen_yandex()
+        assert driver.current_url == 'https://zen.yandex.ru/labirintru'
+
+    def test_footer_souvenir(self):
+        driver = webdriver.Chrome()
+        driver.set_window_size(1900, 1200)
+        driver.get('https://www.labirint.ru')
+        homepage = HomePage(driver)
+        homepage.click_footer_souvenir()
+        assert driver.current_url == 'https://www.labirint.ru/souvenir/'
+
+    def test_footer_children_navigator(self):
+        driver = webdriver.Chrome()
+        driver.set_window_size(1900, 1200)
+        driver.get('https://www.labirint.ru')
+        homepage = HomePage(driver)
+        homepage.click_footer_children_navigator()
+        assert driver.current_url == 'https://www.labirint.ru/child-now/'
+
+    def test_you_recently_watched(self):
+        driver = webdriver.Chrome()
+        driver.set_window_size(1900, 1200)
+        driver.get('https://www.labirint.ru')
+        homepage = HomePage(driver)
+        homepage.click_you_recently_watched()
+        assert driver.current_url == 'https://www.labirint.ru/cabinet/?vybor=visited'

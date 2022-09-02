@@ -5,9 +5,9 @@ from selenium.webdriver.common.by import By
 class Locators:
     Accept_conditions_text = '//*[@id="minwidth"]/div[4]/div[2]/p[1]'
     Accept_conditions_btn = '//*[@id="minwidth"]/div[4]/div[2]/button[1]'
-    # Проверка кликабельности кнопки "Лабиринт".
+    # Проверка кликабельности кнопки "Лабиринт" в "шапке" сайта.
     header_button_logo_lab = 'b-header-b-logo-wrapper'
-    # Проверка кликабельности списка кнопки "Книги".
+    # Проверка кликабельности списка кнопки "Книги" в "шапке" сайта.
     header_button_books = '//a[@href="/books/"]'
     header_button_best = "//*[@id='header-genres']/div[1]/ul[1]/li[2]/a[1]"
     header_button_all_books = '//*[@id="header-genres"]/div[1]/ul[1]/li[3]/a[1]'
@@ -29,10 +29,8 @@ class Locators:
     religious_studies = '//*[@id="header-genres"]/div[1]/ul[1]/li[10]/ul[1]/li[6]/a[1]'
     educational_methodical_literature = "//*[@id='header-genres']/div[1]/ul[1]/li[11]/span[1]"
     all_educational_methodical_literature = '//*[@id="header-genres"]/div[1]/ul[1]/li[11]/ul[1]/li[3]/a[1]'
-    pedagogy_educational_methodical_literature = '//a[@href="/genres/1857"]'
     fiction_literature = "//span[contains(text(), 'Художественная')]"
     all_fiction_literature = '//*[@id="header-genres"]/div[1]/ul[1]/li[12]/ul[1]/li[3]/a[1]'
-    fantasy_fiction_literature = '//*[@id="header-genres"]/div[1]/ul[1]/li[12]/ul[1]/li[16]/a[1]'
     small_book_reviews = '//*[@id="header-genres"]/div[1]/ul[1]/li[13]/span[1]/a[2]'
     authors_books = '//*[@id="header-genres"]/div[1]/ul[1]/li[13]/span[1]/a[7]'
     # Проверка кликабельности списка кнопки "Школа" в "шапке" сайта.
@@ -49,7 +47,15 @@ class Locators:
     office_tools = '//a[@href="/office/"]'
     book_accessories = "//span[contains(text(), 'Аксессуары для книг')]"
     bookmarks = '//*[@id="header-office"]/div[1]/ul[1]/li[3]/ul[1]/li[4]/a[1]'
-
+    # Проверка кликабельности ссылок в "теле" сайта.
+    html = 'html'
+    body_readers_choose = 'block-link-title'
+    body_readers_choose_today = '//*[@id="bottom"]/div[4]/div[1]/a[1]'
+    # Проверка кликабельности ссылок в "подвале" сайта.
+    footer_zen_yandex = '//a[@href="https://zen.yandex.ru/labirintru"]'
+    footer_souvenir = '//*[@id="body-top"]/div[4]/div[2]/div/div[2]/div[1]/div[2]/ul/li[7]/a'
+    footer_children_navigator = '//a[@href="/child-now/"]'
+    you_recently_watched = '//a[@href="/cabinet/?vybor=visited"]'
 
 
 

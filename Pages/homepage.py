@@ -40,10 +40,8 @@ class HomePage (object):
         self.religious_studies = Locators.religious_studies
         self.educational_methodical_literature = Locators.educational_methodical_literature
         self.all_educational_methodical_literature = Locators.all_educational_methodical_literature
-        self.pedagogy_educational_methodical_literature = Locators.pedagogy_educational_methodical_literature
         self.fiction_literature = Locators.fiction_literature
         self.all_fiction_literature = Locators.all_fiction_literature
-        self.fantasy_fiction_literature = Locators.fantasy_fiction_literature
         self.small_book_reviews = Locators.small_book_reviews
         self.authors_books = Locators.authors_books
         self.header_button_school = Locators.header_button_school
@@ -58,6 +56,13 @@ class HomePage (object):
         self.office_tools = Locators.office_tools
         self.book_accessories = Locators.book_accessories
         self.bookmarks = Locators.bookmarks
+        self.html = Locators.html
+        self.body_readers_choose = Locators.body_readers_choose
+        self.body_readers_choose_today = Locators.body_readers_choose_today
+        self.you_recently_watched = Locators.you_recently_watched
+        self.footer_zen_yandex = Locators.footer_zen_yandex
+        self.footer_souvenir = Locators.footer_souvenir
+        self.footer_children_navigator = Locators.footer_children_navigator
 
     def click_logo(self):
         WebDriverWait(self.driver, 10).until(
@@ -262,25 +267,6 @@ class HomePage (object):
         actions.click()
         actions.perform()
 
-    def click_pedagogy_educational_methodical_literature(self):
-        WebDriverWait(self.driver, 5).until(EC.presence_of_element_located(
-            (By.XPATH, self.header_button_books)))
-        actions = ActionChains(self.driver)
-        actions.move_to_element(self.driver.find_element(By.XPATH, self.header_button_books))
-        actions.perform()
-        WebDriverWait(self.driver, 5).until(EC.presence_of_element_located(
-            (By.XPATH, self.educational_methodical_literature)))
-        actions.move_to_element(
-            self.driver.find_element(By.XPATH, self.educational_methodical_literature))
-        actions.perform()
-        actions.send_keys(Keys.DOWN)
-        WebDriverWait(self.driver, 5).until(EC.presence_of_element_located(
-            (By.XPATH, self.pedagogy_educational_methodical_literature)))
-        actions.move_to_element(
-            self.driver.find_element(By.XPATH, self.pedagogy_educational_methodical_literature))
-        actions.click()
-        actions.perform()
-
     def click_all_fiction_literature(self):
         WebDriverWait(self.driver, 5).until(EC.presence_of_element_located(
             (By.XPATH, self.header_button_books)))
@@ -294,27 +280,6 @@ class HomePage (object):
         actions.perform()
         actions.move_to_element(
             self.driver.find_element(By.XPATH, self.all_fiction_literature))
-        actions.click()
-        actions.perform()
-
-    def click_fantasy_fiction_literature(self):
-        WebDriverWait(self.driver, 5).until(EC.presence_of_element_located(
-            (By.XPATH, self.header_button_books)))
-        actions = ActionChains(self.driver)
-        actions.move_to_element(self.driver.find_element(By.XPATH, self.header_button_books))
-        actions.perform()
-        WebDriverWait(self.driver, 5).until(EC.presence_of_element_located(
-            (By.XPATH, self.fiction_literature)))
-        actions.move_to_element(
-            self.driver.find_element(By.XPATH, self.fiction_literature))
-        actions.perform()
-        # actions.send_keys(Keys.DOWN)
-        WebDriverWait(self.driver, 5).until(EC.presence_of_element_located(
-            (By.XPATH, self.fantasy_fiction_literature)))
-        # actions.send_keys(Keys.DOWN)
-        # actions.scroll_to_element(self.small_book_reviews)
-        actions.move_to_element(
-            self.driver.find_element(By.XPATH, self.fantasy_fiction_literature))
         actions.click()
         actions.perform()
 
@@ -418,3 +383,54 @@ class HomePage (object):
         actions.click()
         actions.perform()
 
+    def click_body_readers_choose_today(self):
+        html = self.driver.find_element(By.TAG_NAME, self.html)
+        html.send_keys(Keys.PAGE_DOWN)
+        actions = ActionChains(self.driver)
+        WebDriverWait(self.driver, 5).until(EC.presence_of_element_located(
+            (By.CLASS_NAME, self.body_readers_choose)))
+        actions.move_to_element(self.driver.find_element(By.XPATH, self.body_readers_choose_today))
+        actions.click()
+        actions.perform()
+
+    def click_you_recently_watched(self):
+        html = self.driver.find_element(By.TAG_NAME, self.html)
+        actions = ActionChains(self.driver)
+        html.send_keys(Keys.END)
+        WebDriverWait(self.driver, 5).until(EC.presence_of_element_located(
+            (By.XPATH, self.you_recently_watched)))
+        self.driver.find_element(By.XPATH, self.you_recently_watched).click()
+
+    def click_footer_zen_yandex(self):
+        html = self.driver.find_element(By.TAG_NAME, self.html)
+        html.send_keys(Keys.END)
+        actions = ActionChains(self.driver)
+        WebDriverWait(self.driver, 10).until(EC.presence_of_element_located(
+            (By.XPATH, self.footer_zen_yandex)))
+        actions.move_to_element(self.driver.find_elements(By.XPATH, self.footer_zen_yandex)[1])
+        actions.click()
+        actions.perform()
+        time.sleep(2)
+        current_window = self.driver.current_window_handle
+        new_window = [window for window in self.driver.window_handles if window != current_window][0]
+        self.driver.switch_to.window(new_window)
+
+    def click_footer_souvenir(self):
+        html = self.driver.find_element(By.TAG_NAME, self.html)
+        html.send_keys(Keys.END)
+        actions = ActionChains(self.driver)
+        WebDriverWait(self.driver, 10).until(EC.presence_of_element_located(
+            (By.XPATH, self.footer_souvenir)))
+        actions.move_to_element(self.driver.find_element(By.XPATH, self.footer_souvenir))
+        actions.click()
+        actions.perform()
+
+    def click_footer_children_navigator(self):
+        html = self.driver.find_element(By.TAG_NAME, self.html)
+        html.send_keys(Keys.END)
+        actions = ActionChains(self.driver)
+        WebDriverWait(self.driver, 10).until(EC.presence_of_element_located(
+            (By.XPATH, self.footer_children_navigator)))
+        actions.move_to_element(self.driver.find_element(By.XPATH, self.footer_children_navigator))
+        actions.click()
+        actions.perform()
