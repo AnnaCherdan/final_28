@@ -1,17 +1,10 @@
 import time
-from urllib.parse import urlparse
-from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.keys import Keys
-from Pages.base import WebPage
-from Pages.elements import WebElement
-from Pages.elements import ManyWebElements
-
 from selenium.webdriver.common.by import By
 from Locators.locators import Locators
-from usefull_methods import check_exists_by_xpath
 
 
 class HomePage (object):
@@ -59,7 +52,7 @@ class HomePage (object):
         self.html = Locators.html
         self.body_readers_choose = Locators.body_readers_choose
         self.body_readers_choose_today = Locators.body_readers_choose_today
-        self.you_recently_watched = Locators.you_recently_watched
+        self.body_you_recently_watched = Locators.body_you_recently_watched
         self.footer_zen_yandex = Locators.footer_zen_yandex
         self.footer_souvenir = Locators.footer_souvenir
         self.footer_children_navigator = Locators.footer_children_navigator
@@ -393,13 +386,13 @@ class HomePage (object):
         actions.click()
         actions.perform()
 
-    def click_you_recently_watched(self):
+    def click_body_you_recently_watched(self):
         html = self.driver.find_element(By.TAG_NAME, self.html)
         actions = ActionChains(self.driver)
         html.send_keys(Keys.END)
         WebDriverWait(self.driver, 5).until(EC.presence_of_element_located(
-            (By.XPATH, self.you_recently_watched)))
-        self.driver.find_element(By.XPATH, self.you_recently_watched).click()
+            (By.XPATH, self.body_you_recently_watched)))
+        self.driver.find_element(By.XPATH, self.body_you_recently_watched).click()
 
     def click_footer_zen_yandex(self):
         html = self.driver.find_element(By.TAG_NAME, self.html)
@@ -418,19 +411,13 @@ class HomePage (object):
     def click_footer_souvenir(self):
         html = self.driver.find_element(By.TAG_NAME, self.html)
         html.send_keys(Keys.END)
-        actions = ActionChains(self.driver)
         WebDriverWait(self.driver, 10).until(EC.presence_of_element_located(
             (By.XPATH, self.footer_souvenir)))
-        actions.move_to_element(self.driver.find_element(By.XPATH, self.footer_souvenir))
-        actions.click()
-        actions.perform()
+        self.driver.find_element(By.XPATH, self.footer_souvenir).click()
 
     def click_footer_children_navigator(self):
         html = self.driver.find_element(By.TAG_NAME, self.html)
         html.send_keys(Keys.END)
-        actions = ActionChains(self.driver)
         WebDriverWait(self.driver, 10).until(EC.presence_of_element_located(
             (By.XPATH, self.footer_children_navigator)))
-        actions.move_to_element(self.driver.find_element(By.XPATH, self.footer_children_navigator))
-        actions.click()
-        actions.perform()
+        self.driver.find_element(By.XPATH, self.footer_children_navigator).click()

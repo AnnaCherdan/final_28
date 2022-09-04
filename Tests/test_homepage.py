@@ -1,17 +1,8 @@
-import time
-import pytest
-import os, pickle
 from selenium import webdriver
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.common.keys import Keys
-from Locators.locators import Locators
 from Pages.homepage import HomePage
 
 
-# @pytest.mark.usefixtures('welcome')
 class TestHomePage:
 
     def test_welcome_homepage(self):
@@ -224,6 +215,14 @@ class TestHomePage:
         homepage.click_body_readers_choose_today()
         assert driver.current_url == 'https://www.labirint.ru/best/'
 
+    def test_body_you_recently_watched(self):
+        driver = webdriver.Chrome()
+        driver.set_window_size(1900, 1200)
+        driver.get('https://www.labirint.ru')
+        homepage = HomePage(driver)
+        homepage.click_body_you_recently_watched()
+        assert driver.current_url == 'https://www.labirint.ru/cabinet/?vybor=visited'
+
     def test_footer_zen_yandex(self):
         driver = webdriver.Chrome()
         driver.set_window_size(1900, 1200)
@@ -247,11 +246,3 @@ class TestHomePage:
         homepage = HomePage(driver)
         homepage.click_footer_children_navigator()
         assert driver.current_url == 'https://www.labirint.ru/child-now/'
-
-    def test_you_recently_watched(self):
-        driver = webdriver.Chrome()
-        driver.set_window_size(1900, 1200)
-        driver.get('https://www.labirint.ru')
-        homepage = HomePage(driver)
-        homepage.click_you_recently_watched()
-        assert driver.current_url == 'https://www.labirint.ru/cabinet/?vybor=visited'

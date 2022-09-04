@@ -1,12 +1,9 @@
-from selenium.webdriver.common.by import By
-# header objects
-
-
 class Locators:
-    Accept_conditions_text = '//*[@id="minwidth"]/div[4]/div[2]/p[1]'
-    Accept_conditions_btn = '//*[@id="minwidth"]/div[4]/div[2]/button[1]'
+    # HOMEPAGE OBJECTS
+
     # Проверка кликабельности кнопки "Лабиринт" в "шапке" сайта.
     header_button_logo_lab = 'b-header-b-logo-wrapper'
+
     # Проверка кликабельности списка кнопки "Книги" в "шапке" сайта.
     header_button_books = '//a[@href="/books/"]'
     header_button_best = "//*[@id='header-genres']/div[1]/ul[1]/li[2]/a[1]"
@@ -33,11 +30,13 @@ class Locators:
     all_fiction_literature = '//*[@id="header-genres"]/div[1]/ul[1]/li[12]/ul[1]/li[3]/a[1]'
     small_book_reviews = '//*[@id="header-genres"]/div[1]/ul[1]/li[13]/span[1]/a[2]'
     authors_books = '//*[@id="header-genres"]/div[1]/ul[1]/li[13]/span[1]/a[7]'
+
     # Проверка кликабельности списка кнопки "Школа" в "шапке" сайта.
     header_button_school = '//a[@href="/school/"]'
     russian_languages_button = '//*[@id="header-school"]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]'
     six_class = '//*[@id="header-school"]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[6]/a[1]'
     unified_state_exam = '//*[@id="header-school"]/div[1]/div[1]/div[2]/div[1]/div[2]/ul[1]/li[2]/a[1]'
+
     # Проверка кликабельности списка кнопки "Игрушки" в "шапке" сайта.
     games_button = '//a[@href="/games/"]'
     all_games = '//*[@id="header-toys"]/div[1]/ul[1]/li[2]/a[1]'
@@ -47,16 +46,25 @@ class Locators:
     office_tools = '//a[@href="/office/"]'
     book_accessories = "//span[contains(text(), 'Аксессуары для книг')]"
     bookmarks = '//*[@id="header-office"]/div[1]/ul[1]/li[3]/ul[1]/li[4]/a[1]'
+
     # Проверка кликабельности ссылок в "теле" сайта.
     html = 'html'
     body_readers_choose = 'block-link-title'
     body_readers_choose_today = '//*[@id="bottom"]/div[4]/div[1]/a[1]'
+    body_you_recently_watched = '//a[@href="/cabinet/?vybor=visited"]'
+
     # Проверка кликабельности ссылок в "подвале" сайта.
     footer_zen_yandex = '//a[@href="https://zen.yandex.ru/labirintru"]'
-    footer_souvenir = '//*[@id="body-top"]/div[4]/div[2]/div/div[2]/div[1]/div[2]/ul/li[7]/a'
-    footer_children_navigator = '//a[@href="/child-now/"]'
-    you_recently_watched = '//a[@href="/cabinet/?vybor=visited"]'
+    footer_souvenir = '//a[@data-event-content="Сувениры"]'
+    footer_children_navigator = '//a[@data-event-content="Детский навигатор"]'
 
-
+    # AUTHORIZATION OBJECTS
+    # Проверка выпадающих сообщений блока неавторизованного пользователя.
+    unauthorized_messages = "//span[contains(text(), 'Сообщения')]"
+    no_unauthorized_messages = '//*[@id="minwidth"]/div[4]/div/div[1]/div[2]/div/ul/li[3]/div/div/div/div'
+    my_lab = "//span[contains(text(), 'Mой Лаб​иринт')]"
+    go_to_authorize = '//a[@data-sendto-params="auth-registration"]'
+    authorize_form = "//span[contains(text(), 'Введите свой код скидки, телефон или эл.почту')]"
+    hold_over_stash = '//a[@href="/cabinet/putorder/"]'
 
 
