@@ -16,6 +16,7 @@ class AuthorizationPage(object):
         self.my_lab = Locators.my_lab
         self.go_to_authorize = Locators.go_to_authorize
         self.hold_over_stash = Locators.hold_over_stash
+        self.cart = Locators.cart
 
     def visible_unauthorized_messages(self):
         actions = ActionChains(self.driver)
@@ -40,3 +41,8 @@ class AuthorizationPage(object):
         WebDriverWait(self.driver, 10).until(
             EC.presence_of_element_located((By.XPATH, self.hold_over_stash)))
         self.driver.find_element(By.XPATH, self.hold_over_stash).click()
+
+    def click_unauthorized_cart(self):
+        WebDriverWait(self.driver, 10).until(
+            EC.presence_of_element_located((By.XPATH, self.cart)))
+        self.driver.find_element(By.XPATH, self.cart).click()

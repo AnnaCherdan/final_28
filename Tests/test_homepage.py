@@ -6,7 +6,7 @@ from Pages.homepage import HomePage
 class TestHomePage:
 
     def test_welcome_homepage(self):
-        driver = webdriver.Chrome()
+        driver = webdriver.Chrome(executable_path='D:\\AllDoc\\AnnCherdan\\Final\\final_28\\chromedriver.exe')
         driver.set_window_size(1400, 700)
         driver.get('https://www.labirint.ru')
         homepage = HomePage(driver)
@@ -14,7 +14,7 @@ class TestHomePage:
         assert driver.current_url == 'https://www.labirint.ru/'
 
     def test_books_best(self):
-        driver = webdriver.Chrome()
+        driver = webdriver.Chrome(executable_path='D:\\AllDoc\\AnnCherdan\\Final\\final_28\\chromedriver.exe')
         driver.set_window_size(1400, 700)
         driver.get('https://www.labirint.ru/')
         homepage = HomePage(driver)
@@ -22,7 +22,7 @@ class TestHomePage:
         assert driver.current_url == 'https://www.labirint.ru/best/'
 
     def test_books_all(self):
-        driver = webdriver.Chrome()
+        driver = webdriver.Chrome(executable_path='D:\\AllDoc\\AnnCherdan\\Final\\final_28\\chromedriver.exe')
         driver.set_window_size(1400, 700)
         driver.get('https://www.labirint.ru/')
         homepage = HomePage(driver)
@@ -30,7 +30,7 @@ class TestHomePage:
         assert driver.current_url == 'https://www.labirint.ru/books/'
 
     def test_books_bilinguals(self):
-        driver = webdriver.Chrome()
+        driver = webdriver.Chrome(executable_path='D:\\AllDoc\\AnnCherdan\\Final\\final_28\\chromedriver.exe')
         driver.set_window_size(1400, 700)
         driver.get('https://www.labirint.ru/')
         homepage = HomePage(driver)
@@ -38,7 +38,7 @@ class TestHomePage:
         assert driver.current_url == 'https://www.labirint.ru/genres/2827/'
 
     def test_children_all_book(self):
-        driver = webdriver.Chrome()
+        driver = webdriver.Chrome(executable_path='D:\\AllDoc\\AnnCherdan\\Final\\final_28\\chromedriver.exe')
         driver.set_window_size(1400, 700)
         driver.get('https://www.labirint.ru/')
         homepage = HomePage(driver)
@@ -46,7 +46,7 @@ class TestHomePage:
         assert driver.current_url == 'https://www.labirint.ru/genres/1850/'
 
     def test_children_leisure(self):
-        driver = webdriver.Chrome()
+        driver = webdriver.Chrome(executable_path='D:\\AllDoc\\AnnCherdan\\Final\\final_28\\chromedriver.exe')
         driver.set_window_size(1400, 700)
         driver.get('https://www.labirint.ru/')
         homepage = HomePage(driver)
@@ -54,7 +54,7 @@ class TestHomePage:
         assert driver.current_url == 'https://www.labirint.ru/genres/2048/'
 
     def test_all_manga_comics_art(self):
-        driver = webdriver.Chrome()
+        driver = webdriver.Chrome(executable_path='D:\\AllDoc\\AnnCherdan\\Final\\final_28\\chromedriver.exe')
         driver.set_window_size(1400, 700)
         driver.get('https://www.labirint.ru/')
         homepage = HomePage(driver)
@@ -62,7 +62,7 @@ class TestHomePage:
         assert driver.current_url == 'https://www.labirint.ru/genres/2993/'
 
     def test_only_manga_button(self):
-        driver = webdriver.Chrome()
+        driver = webdriver.Chrome(executable_path='D:\\AllDoc\\AnnCherdan\\Final\\final_28\\chromedriver.exe')
         driver.set_window_size(1400, 700)
         driver.get('https://www.labirint.ru/')
         homepage = HomePage(driver)
@@ -70,7 +70,7 @@ class TestHomePage:
         assert driver.current_url == 'https://www.labirint.ru/genres/2684/'
 
     def test_youth_literature(self):
-        driver = webdriver.Chrome()
+        driver = webdriver.Chrome(executable_path='D:\\AllDoc\\AnnCherdan\\Final\\final_28\\chromedriver.exe')
         driver.set_window_size(1400, 700)
         driver.get('https://www.labirint.ru')
         homepage = HomePage(driver)
@@ -78,7 +78,7 @@ class TestHomePage:
         assert driver.current_url == 'https://www.labirint.ru/genres/3066/'
 
     def test_non_fiction_all(self):
-        driver = webdriver.Chrome()
+        driver = webdriver.Chrome(executable_path='D:\\AllDoc\\AnnCherdan\\Final\\final_28\\chromedriver.exe')
         driver.set_window_size(1900, 1200)
         driver.get('https://www.labirint.ru')
         homepage = HomePage(driver)
@@ -86,7 +86,7 @@ class TestHomePage:
         assert driver.current_url == 'https://www.labirint.ru/genres/3000/'
 
     def test_non_fiction_natural_sciences(self):
-        driver = webdriver.Chrome()
+        driver = webdriver.Chrome(executable_path='D:\\AllDoc\\AnnCherdan\\Final\\final_28\\chromedriver.exe')
         driver.set_window_size(1400, 700)
         driver.get('https://www.labirint.ru')
         homepage = HomePage(driver)
@@ -94,7 +94,7 @@ class TestHomePage:
         assert driver.current_url == 'https://www.labirint.ru/genres/1854/'
 
     def test_periodicals(self):
-        driver = webdriver.Chrome()
+        driver = webdriver.Chrome(executable_path='D:\\AllDoc\\AnnCherdan\\Final\\final_28\\chromedriver.exe')
         driver.set_window_size(1400, 700)
         driver.get('https://www.labirint.ru')
         homepage = HomePage(driver)
@@ -102,7 +102,7 @@ class TestHomePage:
         assert driver.current_url == 'https://www.labirint.ru/genres/2137/'
 
     def test_all_religion(self):
-        driver = webdriver.Chrome()
+        driver = webdriver.Chrome(executable_path='D:\\AllDoc\\AnnCherdan\\Final\\final_28\\chromedriver.exe')
         driver.set_window_size(1400, 700)
         driver.get('https://www.labirint.ru')
         homepage = HomePage(driver)
@@ -110,7 +110,7 @@ class TestHomePage:
         assert driver.current_url == 'https://www.labirint.ru/genres/2386/'
 
     def test_religious_studies(self):
-        driver = webdriver.Chrome()
+        driver = webdriver.Chrome(executable_path='D:\\AllDoc\\AnnCherdan\\Final\\final_28\\chromedriver.exe')
         driver.set_window_size(1400, 700)
         driver.get('https://www.labirint.ru')
         homepage = HomePage(driver)
@@ -118,7 +118,7 @@ class TestHomePage:
         assert driver.current_url == 'https://www.labirint.ru/genres/2395/'
 
     def test_all_educational_methodical_literature(self):
-        driver = webdriver.Chrome()
+        driver = webdriver.Chrome(executable_path='D:\\AllDoc\\AnnCherdan\\Final\\final_28\\chromedriver.exe')
         driver.set_window_size(1400, 700)
         driver.get('https://www.labirint.ru')
         homepage = HomePage(driver)
@@ -126,7 +126,7 @@ class TestHomePage:
         assert driver.current_url == 'https://www.labirint.ru/genres/11/'
 
     def test_all_fiction_literature(self):
-        driver = webdriver.Chrome()
+        driver = webdriver.Chrome(executable_path='D:\\AllDoc\\AnnCherdan\\Final\\final_28\\chromedriver.exe')
         driver.set_window_size(1400, 700)
         driver.get('https://www.labirint.ru')
         homepage = HomePage(driver)
@@ -134,7 +134,7 @@ class TestHomePage:
         assert driver.current_url == 'https://www.labirint.ru/genres/1852/'
 
     def test_small_book_reviews(self):
-        driver = webdriver.Chrome()
+        driver = webdriver.Chrome(executable_path='D:\\AllDoc\\AnnCherdan\\Final\\final_28\\chromedriver.exe')
         driver.set_window_size(1900, 1200)
         driver.get('https://www.labirint.ru')
         homepage = HomePage(driver)
@@ -142,7 +142,7 @@ class TestHomePage:
         assert driver.current_url == 'https://www.labirint.ru/news/books/'
 
     def test_author_books(self):
-        driver = webdriver.Chrome()
+        driver = webdriver.Chrome(executable_path='D:\\AllDoc\\AnnCherdan\\Final\\final_28\\chromedriver.exe')
         driver.set_window_size(1900, 1200)
         driver.get('https://www.labirint.ru')
         homepage = HomePage(driver)
@@ -150,7 +150,7 @@ class TestHomePage:
         assert driver.current_url == 'https://www.labirint.ru/authors/books/'
 
     def test_school_russian(self):
-        driver = webdriver.Chrome()
+        driver = webdriver.Chrome(executable_path='D:\\AllDoc\\AnnCherdan\\Final\\final_28\\chromedriver.exe')
         driver.set_window_size(1900, 1200)
         driver.get('https://www.labirint.ru')
         homepage = HomePage(driver)
@@ -159,7 +159,7 @@ class TestHomePage:
             By.XPATH, '//*[@id="right-inner"]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/h3[1]').is_displayed()
 
     def test_school_six_class(self):
-        driver = webdriver.Chrome()
+        driver = webdriver.Chrome(executable_path='D:\\AllDoc\\AnnCherdan\\Final\\final_28\\chromedriver.exe')
         driver.set_window_size(1900, 1200)
         driver.get('https://www.labirint.ru')
         homepage = HomePage(driver)
@@ -168,7 +168,7 @@ class TestHomePage:
             By.XPATH, '//*[@id="right-inner"]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/h3[1]').is_displayed()
 
     def test_school_unified_state_exam(self):
-        driver = webdriver.Chrome()
+        driver = webdriver.Chrome(executable_path='D:\\AllDoc\\AnnCherdan\\Final\\final_28\\chromedriver.exe')
         driver.set_window_size(1900, 1200)
         driver.get('https://www.labirint.ru')
         homepage = HomePage(driver)
@@ -176,7 +176,7 @@ class TestHomePage:
         assert driver.current_url == 'https://www.labirint.ru/school/?examtype[]=1#right'
 
     def test_all_games(self):
-        driver = webdriver.Chrome()
+        driver = webdriver.Chrome(executable_path='D:\\AllDoc\\AnnCherdan\\Final\\final_28\\chromedriver.exe')
         driver.set_window_size(1900, 1200)
         driver.get('https://www.labirint.ru')
         homepage = HomePage(driver)
@@ -184,7 +184,7 @@ class TestHomePage:
         assert driver.current_url == 'https://www.labirint.ru/games/'
 
     def test_all_games_and_toys(self):
-        driver = webdriver.Chrome()
+        driver = webdriver.Chrome(executable_path='D:\\AllDoc\\AnnCherdan\\Final\\final_28\\chromedriver.exe')
         driver.set_window_size(1900, 1200)
         driver.get('https://www.labirint.ru')
         homepage = HomePage(driver)
@@ -192,7 +192,7 @@ class TestHomePage:
         assert driver.current_url == 'https://www.labirint.ru/genres/1643/'
 
     def test_small_toy_manufacturers(self):
-        driver = webdriver.Chrome()
+        driver = webdriver.Chrome(executable_path='D:\\AllDoc\\AnnCherdan\\Final\\final_28\\chromedriver.exe')
         driver.set_window_size(1900, 1200)
         driver.get('https://www.labirint.ru')
         homepage = HomePage(driver)
@@ -200,7 +200,7 @@ class TestHomePage:
         assert driver.current_url == 'https://www.labirint.ru/pubhouse/games/'
 
     def test_all_book_accessories(self):
-        driver = webdriver.Chrome()
+        driver = webdriver.Chrome(executable_path='D:\\AllDoc\\AnnCherdan\\Final\\final_28\\chromedriver.exe')
         driver.set_window_size(1900, 1200)
         driver.get('https://www.labirint.ru')
         homepage = HomePage(driver)
@@ -208,7 +208,7 @@ class TestHomePage:
         assert driver.current_url == 'https://www.labirint.ru/genres/2302/'
 
     def test_body_readers_choose_today(self):
-        driver = webdriver.Chrome()
+        driver = webdriver.Chrome(executable_path='D:\\AllDoc\\AnnCherdan\\Final\\final_28\\chromedriver.exe')
         driver.set_window_size(1900, 1200)
         driver.get('https://www.labirint.ru')
         homepage = HomePage(driver)
@@ -216,7 +216,7 @@ class TestHomePage:
         assert driver.current_url == 'https://www.labirint.ru/best/'
 
     def test_body_you_recently_watched(self):
-        driver = webdriver.Chrome()
+        driver = webdriver.Chrome(executable_path='D:\\AllDoc\\AnnCherdan\\Final\\final_28\\chromedriver.exe')
         driver.set_window_size(1900, 1200)
         driver.get('https://www.labirint.ru')
         homepage = HomePage(driver)
@@ -224,7 +224,7 @@ class TestHomePage:
         assert driver.current_url == 'https://www.labirint.ru/cabinet/?vybor=visited'
 
     def test_footer_zen_yandex(self):
-        driver = webdriver.Chrome()
+        driver = webdriver.Chrome(executable_path='D:\\AllDoc\\AnnCherdan\\Final\\final_28\\chromedriver.exe')
         driver.set_window_size(1900, 1200)
         driver.get('https://www.labirint.ru')
         homepage = HomePage(driver)
@@ -232,7 +232,7 @@ class TestHomePage:
         assert driver.current_url == 'https://zen.yandex.ru/labirintru'
 
     def test_footer_souvenir(self):
-        driver = webdriver.Chrome()
+        driver = webdriver.Chrome(executable_path='D:\\AllDoc\\AnnCherdan\\Final\\final_28\\chromedriver.exe')
         driver.set_window_size(1900, 1200)
         driver.get('https://www.labirint.ru')
         homepage = HomePage(driver)
@@ -240,7 +240,7 @@ class TestHomePage:
         assert driver.current_url == 'https://www.labirint.ru/souvenir/'
 
     def test_footer_children_navigator(self):
-        driver = webdriver.Chrome()
+        driver = webdriver.Chrome(executable_path='D:\\AllDoc\\AnnCherdan\\Final\\final_28\\chromedriver.exe')
         driver.set_window_size(1900, 1200)
         driver.get('https://www.labirint.ru')
         homepage = HomePage(driver)

@@ -11,14 +11,14 @@ from usefull_methods import check_exists_by_xpath
 
 class TestAuthorizationPage:
     def test_visible_unauthorized_messages(self):
-        driver = webdriver.Chrome()
+        driver = webdriver.Chrome(executable_path='D:\\AllDoc\\AnnCherdan\\Final\\final_28\\chromedriver.exe')
         driver.set_window_size(1400, 700)
         driver.get('https://www.labirint.ru/')
         homepage = AuthorizationPage(driver)
         homepage.visible_unauthorized_messages()
 
     def test_visible_my_lab_go_to_authorize(self):
-        driver = webdriver.Chrome()
+        driver = webdriver.Chrome(executable_path='D:\\AllDoc\\AnnCherdan\\Final\\final_28\\chromedriver.exe')
         driver.set_window_size(1400, 700)
         driver.get('https://www.labirint.ru/')
         homepage = AuthorizationPage(driver)
@@ -27,11 +27,19 @@ class TestAuthorizationPage:
             By.XPATH, "//span[contains(text(), 'Введите свой код скидки, телефон или эл.почту')]").is_displayed()
 
     def test_click_hold_over(self):
-        driver = webdriver.Chrome()
+        driver = webdriver.Chrome(executable_path='D:\\AllDoc\\AnnCherdan\\Final\\final_28\\chromedriver.exe')
         driver.set_window_size(1400, 700)
         driver.get('https://www.labirint.ru/')
         homepage = AuthorizationPage(driver)
         homepage.click_hold_over()
         assert driver.current_url == 'https://www.labirint.ru/cabinet/putorder/'
+
+    def test_unauthorized_cart(self):
+        driver = webdriver.Chrome(executable_path='D:\\AllDoc\\AnnCherdan\\Final\\final_28\\chromedriver.exe')
+        driver.set_window_size(1900, 1200)
+        driver.get('https://www.labirint.ru/')
+        homepage = AuthorizationPage(driver)
+        homepage.click_unauthorized_cart()
+        assert driver.current_url == 'https://www.labirint.ru/cart/'
 
 

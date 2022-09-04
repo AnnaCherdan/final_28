@@ -66,5 +66,6 @@ class Locators:
     go_to_authorize = '//a[@data-sendto-params="auth-registration"]'
     authorize_form = "//span[contains(text(), 'Введите свой код скидки, телефон или эл.почту')]"
     hold_over_stash = '//a[@href="/cabinet/putorder/"]'
+    cart = "//span[contains(text(), 'Корзина')]"
 
 
