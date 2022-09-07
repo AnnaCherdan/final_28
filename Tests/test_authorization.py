@@ -39,7 +39,7 @@ class TestAuthorizationPage:
 
     # АВТОРИЗАЦИЯ по коду скидки.
     def test_true_discount_code(self):
-        driver = webdriver.Chrome(executable_path='D:\\AllDoc\\AnnCherdan\\Final\\final_28\\chromedriver.exe')
+        driver = webdriver.Chrome(executable_path='C:\\Users\\User\\Desktop\\Python\\final_28_7\\chromedriver.exe')
         driver.set_window_size(1900, 1200)
         driver.get('https://www.labirint.ru/')
         homepage = AuthorizationPage(driver)
