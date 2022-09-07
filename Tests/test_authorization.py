@@ -1,15 +1,10 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from Pages.authpage import AuthorizationPage
-import time
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.common.action_chains import ActionChains
-from selenium.webdriver.common.keys import Keys
-from usefull_methods import check_exists_by_xpath
 
 
 class TestAuthorizationPage:
+    # Клиентский блок неавторизованного пользователя.
     def test_visible_unauthorized_messages(self):
         driver = webdriver.Chrome(executable_path='D:\\AllDoc\\AnnCherdan\\Final\\final_28\\chromedriver.exe')
         driver.set_window_size(1400, 700)
@@ -42,4 +37,19 @@ class TestAuthorizationPage:
         homepage.click_unauthorized_cart()
         assert driver.current_url == 'https://www.labirint.ru/cart/'
 
+    # АВТОРИЗАЦИЯ по коду скидки.
+    def test_true_discount_code(self):
+        driver = webdriver.Chrome(executable_path='D:\\AllDoc\\AnnCherdan\\Final\\final_28\\chromedriver.exe')
+        driver.set_window_size(1900, 1200)
+        driver.get('https://www.labirint.ru/')
+        homepage = AuthorizationPage(driver)
+        homepage.click_true_discount_code()
+        assert driver.find_element(By.XPATH, "//span[contains(text(), ' Код скидки FB16-4A69-9F0F')]").is_displayed()
 
+    def test_wrong_discount_code(self):
+        driver = webdriver.Chrome(executable_path='D:\\AllDoc\\AnnCherdan\\Final\\final_28\\chromedriver.exe')
+        driver.set_window_size(1900, 1200)
+        driver.get('https://www.labirint.ru/')
+        homepage = AuthorizationPage(driver)
+        homepage.click_wrong_discount_code()
+        assert driver.find_element(By.XPATH, '//*[@id="auth-by-code"]/div[3]/span[3]/small[1]').is_displayed()

@@ -246,3 +246,11 @@ class TestHomePage:
         homepage = HomePage(driver)
         homepage.click_footer_children_navigator()
         assert driver.current_url == 'https://www.labirint.ru/child-now/'
+
+    def test_search(self):
+        driver = webdriver.Chrome(executable_path='D:\\AllDoc\\AnnCherdan\\Final\\final_28\\chromedriver.exe')
+        driver.set_window_size(1900, 1200)
+        driver.get('https://www.labirint.ru')
+        homepage = HomePage(driver)
+        homepage.click_search()
+        assert driver.current_url == 'https://www.labirint.ru/search/%D1%84%D0%B5%D0%B9%D0%BD%D0%BC%D0%B0%D0%BD/?stype=0'

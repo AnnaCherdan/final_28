@@ -56,6 +56,8 @@ class HomePage (object):
         self.footer_zen_yandex = Locators.footer_zen_yandex
         self.footer_souvenir = Locators.footer_souvenir
         self.footer_children_navigator = Locators.footer_children_navigator
+        self.search = Locators.search
+        self.search_button = Locators.search_button
 
     def click_logo(self):
         WebDriverWait(self.driver, 10).until(
@@ -421,3 +423,14 @@ class HomePage (object):
         WebDriverWait(self.driver, 10).until(EC.presence_of_element_located(
             (By.XPATH, self.footer_children_navigator)))
         self.driver.find_element(By.XPATH, self.footer_children_navigator).click()
+
+    def click_search(self):
+        element = WebDriverWait(self.driver, 10).until(
+            EC.presence_of_element_located((By.XPATH, self.search)))
+        actions = ActionChains(self.driver)
+        actions.move_to_element(element)
+        actions.click()
+        actions.send_keys("фейнман")
+        actions.perform()
+        self.driver.find_element(By.XPATH, self.search_button).click()
+

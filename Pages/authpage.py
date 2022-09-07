@@ -1,4 +1,4 @@
-from selenium.webdriver.common.keys import Keys
+import time
 from selenium.webdriver.common.by import By
 from Locators.locators import Locators
 from selenium.webdriver.support.ui import WebDriverWait
@@ -17,6 +17,9 @@ class AuthorizationPage(object):
         self.go_to_authorize = Locators.go_to_authorize
         self.hold_over_stash = Locators.hold_over_stash
         self.cart = Locators.cart
+        self.discount_code_field = Locators.discount_code_field
+        self.button_auth = Locators.button_auth
+        self.wrong_discount_code = Locators.wrong_discount_code
 
     def visible_unauthorized_messages(self):
         actions = ActionChains(self.driver)
@@ -32,10 +35,7 @@ class AuthorizationPage(object):
     def visible_my_lab_go_to_authorize(self):
         actions = ActionChains(self.driver)
         actions.move_to_element(self.driver.find_element(By.XPATH, self.my_lab))
-        actions.perform()
-        WebDriverWait(self.driver, 10).until(
-                EC.presence_of_element_located((By.XPATH, self.go_to_authorize)))
-        self.driver.find_element(By.XPATH, self.go_to_authorize).click()
+        self.driver.find_element(By.XPATH, self.my_lab).click()
 
     def click_hold_over(self):
         WebDriverWait(self.driver, 10).until(
@@ -46,3 +46,33 @@ class AuthorizationPage(object):
         WebDriverWait(self.driver, 10).until(
             EC.presence_of_element_located((By.XPATH, self.cart)))
         self.driver.find_element(By.XPATH, self.cart).click()
+
+    def click_true_discount_code(self):
+        WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.XPATH, self.my_lab)))
+        actions = ActionChains(self.driver)
+        actions.move_to_element(self.driver.find_element(By.XPATH, self.my_lab)).click()
+        actions.perform()
+        self.driver.find_element(By.XPATH, self.discount_code_field).clear()
+        actions.move_to_element(self.driver.find_element(By.XPATH, self.discount_code_field))
+        self.driver.find_element(By.XPATH, self.discount_code_field).send_keys('FB16-4A69-9F0F')
+        actions.move_to_element(self.driver.find_element(By.XPATH, self.button_auth))
+        self.driver.find_element(By.XPATH, self.button_auth).click()
+        time.sleep(30)
+        WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.XPATH, self.my_lab)))
+        actions.move_to_element(self.driver.find_element(By.XPATH, self.my_lab))
+        self.driver.find_element(By.XPATH, self.my_lab).click()
+
+    def click_wrong_discount_code(self):
+        WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.XPATH, self.my_lab)))
+        actions = ActionChains(self.driver)
+        actions.move_to_element(self.driver.find_element(By.XPATH, self.my_lab)).click()
+        actions.perform()
+        self.driver.find_element(By.XPATH, self.discount_code_field).clear()
+        actions.move_to_element(self.driver.find_element(By.XPATH, self.discount_code_field))
+        self.driver.find_element(By.XPATH, self.discount_code_field).send_keys('B16-4A69-9F0F')
+        actions.move_to_element(self.driver.find_element(By.XPATH, self.button_auth))
+        self.driver.find_element(By.XPATH, self.button_auth).click()
+        WebDriverWait(self.driver, 10).until(
+            EC.presence_of_element_located((By.XPATH, self.wrong_discount_code)))
+
+

@@ -57,15 +57,29 @@ class Locators:
     footer_zen_yandex = '//a[@href="https://zen.yandex.ru/labirintru"]'
     footer_souvenir = '//a[@data-event-content="Сувениры"]'
     footer_children_navigator = '//a[@data-event-content="Детский навигатор"]'
+    search = '//*[@id="search-field"]'
+    search_button = "//button[@class='b-header-b-search-e-btn']"
 
     # AUTHORIZATION OBJECTS
     # Проверка выпадающих сообщений блока неавторизованного пользователя.
     unauthorized_messages = "//span[contains(text(), 'Сообщения')]"
     no_unauthorized_messages = '//*[@id="minwidth"]/div[4]/div/div[1]/div[2]/div/ul/li[3]/div/div/div/div'
     my_lab = "//span[contains(text(), 'Mой Лаб​иринт')]"
-    go_to_authorize = '//a[@data-sendto-params="auth-registration"]'
+    go_to_authorize = '//*[@id="minwidth"]/div[4]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[4]/div[1]/div[1]/div[2]/a[1]'
     authorize_form = "//span[contains(text(), 'Введите свой код скидки, телефон или эл.почту')]"
     hold_over_stash = '//a[@href="/cabinet/putorder/"]'
     cart = "//span[contains(text(), 'Корзина')]"
+    # Клиентский блок авторизованного пользователя.
+    discount_code_field = '//*[@name="code"]'
+    button_auth = '//*[@id="g-recap-0-btn"]'
+    cabinet_discount_code = "//span[contains(text(), ' Код скидки FB16-4A69-9F0F')]"
+    wrong_discount_code = '//*[@id="auth-by-code"]/div[3]/span[3]/small[1]'
+
+    # ORDER OBJECTS
+    search_author = "//*[@class='index-top-title']"
+    search_order_book = '//a[@href="/books/767041/"]'
+    hold_over_stash_book = '//*[@id="buyingbtns767041"]/div[1]/a[1]/span[1]'
+
+
 
 
