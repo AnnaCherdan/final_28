@@ -61,8 +61,8 @@ class OrderPage(object):
         self.driver.find_element(By.XPATH, self.search_button).click()
         self.driver.find_element(By.XPATH, self.search_order_book).click()
         self.driver.find_element(By.XPATH, self.hold_over_stash_book).click()
-        actions.move_to_element(self.driver.find_element(By.XPATH, self.hold_over_stash))
-        self.driver.find_element(By.XPATH, self.hold_over_stash).click()
+        WebDriverWait(self.driver, 10).until(
+            EC.presence_of_element_located((By.XPATH, self.really_hold_over_stash_book)))
 
     def click_compare_book(self):
         element = WebDriverWait(self.driver, 10).until(
@@ -118,7 +118,7 @@ class OrderPage(object):
         self.driver.find_element(By.XPATH, self.discount_code_field).send_keys('FB16-4A69-9F0F')
         actions.move_to_element(self.driver.find_element(By.XPATH, self.button_auth))
         self.driver.find_element(By.XPATH, self.button_auth).click()
-        time.sleep(20)
+        time.sleep(10)
         WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.XPATH, self.my_lab)))
         actions.move_to_element(self.driver.find_element(By.XPATH, self.my_lab))
         self.driver.find_element(By.XPATH, self.my_lab).click()
@@ -181,4 +181,6 @@ class OrderPage(object):
         self.driver.find_element(By.XPATH, self.search_button).click()
         self.driver.find_element(By.XPATH, self.cart_buy_book).click()
         self.driver.find_element(By.XPATH, self.clear_cart).click()
+
+
 

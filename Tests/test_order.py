@@ -26,7 +26,15 @@ class TestOrderPage:
         driver.get('https://www.labirint.ru')
         homepage = OrderPage(driver)
         homepage.click_hold_over_stash_book()
-        assert driver.find_element(By.XPATH, "//span[contains(text(), 'Аналитическая психология')]").is_displayed()
+        assert driver.find_element(By.XPATH, "//span[contains(text(), 'Книга в отложенных')]").is_displayed()
+
+    def test_click_compare_book(self):
+        driver = webdriver.Chrome(executable_path='D:\\AllDoc\\AnnCherdan\\Final\\final_28\\chromedriver.exe')
+        driver.set_window_size(1900, 1200)
+        driver.get('https://www.labirint.ru')
+        homepage = OrderPage(driver)
+        homepage.click_compare_book()
+        assert driver.find_element(By.XPATH, "//span[contains(text(), 'Сравнить')]").is_displayed()
 
     def test_cod_for_good_time(self):
         driver = webdriver.Chrome(executable_path='D:\\AllDoc\\AnnCherdan\\Final\\final_28\\chromedriver.exe')

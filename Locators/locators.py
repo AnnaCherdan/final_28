@@ -72,8 +72,9 @@ class Locators:
     # Клиентский блок авторизованного пользователя.
     discount_code_field = '//*[@name="code"]'
     button_auth = '//*[@id="g-recap-0-btn"]'
-    cabinet_discount_code = "//span[contains(text(), ' Код скидки FB16-4A69-9F0F')]"
+    cabinet_discount_code = "//span[contains(text(), 'Код скидки FB16-4A69-9F0F')]"
     wrong_discount_code = '//*[@id="auth-by-code"]/div[3]/span[3]/small[1]'
+    hold_over = '//*[@id="minwidth"]/div[5]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[5]/a[1]/span[2]'
 
     # ORDER OBJECTS
     search_author = "//*[@class='index-top-title']"
@@ -81,7 +82,6 @@ class Locators:
     hold_over_stash_book = '//*[@id="buyingbtns767041"]/div[1]/a[1]/span[1]'
     really_hold_over_stash_book = "//span[contains(text(), 'Книга в отложенных')]"
     compare_book = "//*[@id='buyingbtns767041']/div[1]/a[2]/span[1]"
-    hold_over = '//*[@id="minwidth"]/div[5]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[5]/a[1]/span[2]'
     hold_over_cart = '//a[@href="/cabinet/putorder/"]'
     cart_buy_book = '//*[@id="buy767041"]'
     book_ordered = '//a[@tabindex="-1"]'
