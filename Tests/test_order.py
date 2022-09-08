@@ -27,3 +27,34 @@ class TestOrderPage:
         homepage = OrderPage(driver)
         homepage.click_hold_over_stash_book()
         assert driver.find_element(By.XPATH, "//span[contains(text(), 'Аналитическая психология')]").is_displayed()
+
+    def test_cod_for_good_time(self):
+        driver = webdriver.Chrome(executable_path='D:\\AllDoc\\AnnCherdan\\Final\\final_28\\chromedriver.exe')
+        driver.set_window_size(1900, 1200)
+        driver.get('https://www.labirint.ru')
+        homepage = OrderPage(driver)
+        homepage.cod_for_good_time()
+
+    def test_add_to_cart(self):
+        driver = webdriver.Chrome(executable_path='D:\\AllDoc\\AnnCherdan\\Final\\final_28\\chromedriver.exe')
+        driver.set_window_size(1900, 1200)
+        driver.get('https://www.labirint.ru')
+        homepage = OrderPage(driver)
+        homepage.click_add_to_cart()
+        assert driver.find_element(By.XPATH, '//*[@id="ui-id-4"]').is_displayed()
+
+    def test_book_in_cart(self):
+        driver = webdriver.Chrome(executable_path='D:\\AllDoc\\AnnCherdan\\Final\\final_28\\chromedriver.exe')
+        driver.set_window_size(1900, 1200)
+        driver.get('https://www.labirint.ru')
+        homepage = OrderPage(driver)
+        homepage.click_add_to_cart()
+        assert driver.find_element(By.XPATH, '//*[@id="ui-id-4"]').is_displayed()
+
+    def test_clear_cart(self):
+        driver = webdriver.Chrome(executable_path='D:\\AllDoc\\AnnCherdan\\Final\\final_28\\chromedriver.exe')
+        driver.set_window_size(1900, 1200)
+        driver.get('https://www.labirint.ru')
+        homepage = OrderPage(driver)
+        homepage.click_clear_cart()
+        assert driver.find_element(By.XPATH, "//span[contains(text(), 'Ваша корзина пуста. Почему?')]").is_displayed()

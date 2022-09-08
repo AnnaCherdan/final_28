@@ -79,6 +79,14 @@ class Locators:
     search_author = "//*[@class='index-top-title']"
     search_order_book = '//a[@href="/books/767041/"]'
     hold_over_stash_book = '//*[@id="buyingbtns767041"]/div[1]/a[1]/span[1]'
+    really_hold_over_stash_book = "//span[contains(text(), 'Книга в отложенных')]"
+    compare_book = "//*[@id='buyingbtns767041']/div[1]/a[2]/span[1]"
+    hold_over = '//*[@id="minwidth"]/div[5]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[5]/a[1]/span[2]'
+    hold_over_cart = '//a[@href="/cabinet/putorder/"]'
+    cart_buy_book = '//*[@id="buy767041"]'
+    book_ordered = '//a[@tabindex="-1"]'
+    direct_book = '//*[@id="minwidth"]/div[2]/div[1]/div[1]/div[1]/a[1]'
+    clear_cart = '//a[@class="b-link-popup"]'
 
 
 
